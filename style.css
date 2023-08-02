@@ -19,9 +19,16 @@ h4 {
 #farheneit {
   font-size: 32px;
 }
+
+#farheneit:hover,
+#celsius:hover {
+  color: white;
+  cursor: pointer;
+}
+
 .dark {
   position: relative;
-  left: 450px;
+  top: 0px;
   background: gray;
   border-radius: 20px;
 }

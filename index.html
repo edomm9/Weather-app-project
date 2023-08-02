@@ -19,35 +19,33 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col">
-          <form>
-            <label for="city-search">Search City:</label><br />
-            <input type="search" id="city-search" name="q" />
+      <form id="form">
+        <label for="city-search">Search City:</label><br />
+        <input type="search" id="city-search" name="q" />
 
-            <button id="search">Search</button>
-          </form>
-        </div>
-        <div class="col">
-          <button onclick="myFunction()" class="dark">🕯️</button>
-        </div>
-      </div>
+        <button id="search">Search</button>
+      </form>
+
       <div class="row">
         <div class="col">
           <h1>
-            Addis Ababa
+            <span id="city"> Addis Ababa </span>
             <br />
-            <strong>18 </strong><span id="celsius">℃</span>|<span id="farheneit"
+            <strong class="temp">18 </strong><span id="celsius">℃</span>|<span
+              id="farheneit"
               >℉</span
             >
           </h1>
           <p>
-            Monday, 08:30PM<br />
-            Humidity: 80%<br />
-            Wind: 7km/hr
+            <span class="time"></span><br />
+            Humidity: <span class="hum">-</span>%<br />
+            Wind: <span class="wind">-</span>km/hr
           </p>
         </div>
-        <div class="col"><img src="weather.svg" /></div>
+        <div class="col">
+          <img src="weather.svg" />
+          <button onclick="myFunction()" class="dark">🕯️</button>
+        </div>
       </div>
       <h4>Coming up:</h4>
       <hr />
