@@ -1,0 +1,31 @@
+.container {
+  background: linear-gradient(#92b6f0, #a0bff0, #b2cbf2, #c2d6f6, #d1dff6);
+  padding: 15px 60px 60px 60px;
+  margin: 15px 70px 70px 70px;
+}
+.dark-mode {
+  background: linear-gradient(#091c33, #152642, #2f4562, #506680, #767092);
+  color: white;
+  padding: 15px 60px 60px 60px;
+  margin: 15px 70px 70px 70px;
+}
+img {
+  width: 500px;
+}
+h4 {
+  font-weight: lighter;
+}
+#celsius,
+#farheneit {
+  font-size: 32px;
+}
+.dark {
+  position: relative;
+  left: 450px;
+  background: gray;
+  border-radius: 20px;
+}
+#search {
+  border-radius: 20px;
+  background: #d1dff6;
+}
