@@ -15,24 +15,47 @@ img {
 h4 {
   font-weight: lighter;
 }
-#celsius,
-#farheneit {
-  font-size: 32px;
+h1 {
+  margin: 5px 0px 0px 10px;
 }
-
-#farheneit:hover,
+.metrics {
+  font-size: 18px;
+}
+#form {
+  margin: 15px 0px 0px 10px;
+}
+#fahrenheit:hover,
 #celsius:hover {
   color: white;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .dark {
   position: relative;
   top: 0px;
-  background: gray;
+  background-color: transparent;
   border-radius: 20px;
 }
 #search {
   border-radius: 20px;
   background: #d1dff6;
+  padding: 5px 10px 5px 10px;
+}
+#city-search {
+  padding: 3px 50px 3px 3px;
+}
+.time {
+  text-align: right;
+  font-weight: bold;
+}
+.icon {
+  width: 100px;
+}
+.dark-img {
+  width: 25px;
+}
+.info {
+  margin: 25px 0px 0px 5px;
+  font-size: 16px;
 }

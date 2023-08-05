@@ -1,27 +1,38 @@
 function myFunction() {
+  //This is a function for the darkmode
   var element = document.querySelector(".container");
   element.classList.toggle("dark-mode");
 }
+
 function weatherDisplay(response) {
-  let temprature = Math.round(response.data.main.temp);
-  let humidity = Math.round(response.data.main.humidity);
+  celsiusTemperature = Math.round(response.data.temperature.current);
+  let humidity = Math.round(response.data.temperature.humidity);
   let wind = Math.round(response.data.wind.speed);
+  let icon = response.data.condition.icon_url;
+  let img = document.querySelector(".icon");
+  img.setAttribute("src", icon);
+  let city = response.data.city;
+  let country = response.data.country;
+  let h1 = document.querySelector("#city");
+  h1.innerHTML = `${city}, ${country}`;
+  let sky = response.data.condition.description;
+  let skyCondition = document.querySelector(".sky");
+  skyCondition.innerHTML = sky;
   let humiditydisplay = document.querySelector(".hum");
   humiditydisplay.innerHTML = humidity;
   let windDisplay = document.querySelector(".wind");
   windDisplay.innerHTML = wind;
   let display = document.querySelector(".temp");
-  display.innerHTML = temprature;
+  display.innerHTML = celsiusTemperature;
   console.log(response.data);
+  temp = response.data.current;
 }
 function search(event) {
   event.preventDefault();
   let city = document.querySelector("#city-search").value;
-  let h1 = document.querySelector("#city");
-  h1.innerHTML = city;
   console.log(city);
-  const apiKey = "7aed9d314ed9018ce92ea1322bc9125a";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  const apiKey = "fa8883a22oc48e9593f685a01bt40076";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(weatherDisplay);
 }
 
@@ -48,3 +59,21 @@ let days = [
 ];
 let date = document.querySelector(".time");
 date.innerHTML = `${days[time.getDay()]} ${formattedTime}`;
+
+let celsiusTemperature = null;
+
+function displayF() {
+  let fTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
+  let temperatureElement = document.querySelector(".temp");
+  temperatureElement.textContent = fTemp;
+}
+function displayC() {
+  let temperatureElement = document.querySelector(".temp");
+  temperatureElement.innerHTML = celsiusTemperature;
+}
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", displayF);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", displayC);

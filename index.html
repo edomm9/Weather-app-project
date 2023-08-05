@@ -20,8 +20,7 @@
   <body>
     <div class="container">
       <form id="form">
-        <label for="city-search">Search City:</label><br />
-        <input type="search" id="city-search" name="q" />
+        <input type="text" id="city-search" placeholder="search city" />
 
         <button id="search">Search</button>
       </form>
@@ -29,22 +28,23 @@
       <div class="row">
         <div class="col">
           <h1>
-            <span id="city"> Addis Ababa </span>
-            <br />
-            <strong class="temp">18 </strong><span id="celsius">℃</span>|<span
-              id="farheneit"
-              >℉</span
+            <div id="city"></div>
+            <img src="" class="icon" />
+            <strong class="temp">-</strong
+            ><sup class="metrics"
+              ><span id="celsius">℃</span>|<span id="fahrenheit">℉</span></sup
             >
           </h1>
           <p>
-            <span class="time"></span><br />
+            <span class="sky"></span><br />
             Humidity: <span class="hum">-</span>%<br />
-            Wind: <span class="wind">-</span>km/hr
+            Wind: <span class="wind">-</span>km/hr<br />
           </p>
         </div>
         <div class="col">
+          <span class="time"></span>
+          <button onclick="myFunction()" class="dark">🌙</button>
           <img src="weather.svg" />
-          <button onclick="myFunction()" class="dark">🕯️</button>
         </div>
       </div>
       <h4>Coming up:</h4>
@@ -53,34 +53,35 @@
         <div class="col">
           <p>
             Mon<br />
-            9|16
+            -|-
           </p>
         </div>
         <div class="col">
           <p>
             Tue<br />
-            9|16
+            -|-
           </p>
         </div>
         <div class="col">
           <p>
             Wed<br />
-            9|16
+            -|-
           </p>
         </div>
         <div class="col">
           <p>
             Thu<br />
-            9|16
+            -|-
           </p>
         </div>
         <div class="col">
           <p>
             Fri<br />
-            9|16
+            -|-
           </p>
         </div>
       </div>
+      <p class="info"><a>Open-sourced</a> code by <a>Edom M.</a></p>
     </div>
     <script src="index.js"></script>
   </body>
