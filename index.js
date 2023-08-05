@@ -27,7 +27,7 @@ function weatherDisplay(response) {
   console.log(response.data);
   temp = response.data.current;
 }
-function search(event) {
+function searchCity(event) {
   event.preventDefault();
   let city = document.querySelector("#city-search").value;
   console.log(city);
@@ -37,12 +37,12 @@ function search(event) {
 }
 
 let form = document.querySelector("#form");
-form.addEventListener("click", search);
+form.addEventListener("click", searchCity);
 
 let input = document.querySelector("#city-search");
 input.addEventListener("keydown", function (event) {
   if (event.keyCode === 13) {
-    search(event);
+    searchCity(event);
   }
 });
 let time = new Date();
