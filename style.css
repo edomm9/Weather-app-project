@@ -10,8 +10,9 @@
   padding: 15px 60px 60px 60px;
   margin: 15px 70px 70px 70px;
 }
-img {
+.img {
   width: 500px;
+  max-width: fit-content;
 }
 h4 {
   font-weight: lighter;
