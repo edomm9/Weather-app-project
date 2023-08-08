@@ -1,11 +1,19 @@
 .container {
-  background: linear-gradient(#92b6f0, #a0bff0, #b2cbf2, #c2d6f6, #d1dff6);
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(145, 217, 243) 0%,
+    rgb(147, 164, 243) 90%
+  );
   padding: 15px 60px 60px 60px;
   margin: 15px 70px 70px 70px;
   width: fit-content;
 }
 .dark-mode {
-  background: linear-gradient(#091c33, #152642, #2f4562, #506680, #767092);
+  background: linear-gradient(
+    112.1deg,
+    rgb(32, 38, 57) 11.4%,
+    rgb(63, 76, 119) 70.2%
+  );
   color: white;
   padding: 15px 60px 60px 60px;
   margin: 15px 70px 70px 70px;

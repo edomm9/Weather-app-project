@@ -27,22 +27,25 @@ function weatherDisplay(response) {
   console.log(response.data);
   temp = response.data.current;
 }
-function searchCity(event) {
-  event.preventDefault();
-  let city = document.querySelector("#city-search").value;
-  console.log(city);
+function searchCity(city) {
   const apiKey = "fa8883a22oc48e9593f685a01bt40076";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(weatherDisplay);
 }
 
-let form = document.querySelector("#form");
-form.addEventListener("click", searchCity);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  searchCity(cityInput.value);
+}
 
-let input = document.querySelector("#city-search");
+let form = document.querySelector("#form");
+form.addEventListener("submit", handleSubmit);
+
+let input = document.querySelector("#city-input");
 input.addEventListener("keydown", function (event) {
   if (event.keyCode === 13) {
-    searchCity(event);
+    handleSubmit(event);
   }
 });
 let time = new Date();
@@ -77,3 +80,4 @@ fahrenheit.addEventListener("click", displayF);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", displayC);
+searchCity("Addis Ababa");
