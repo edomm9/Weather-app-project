@@ -5,7 +5,7 @@
     rgb(147, 164, 243) 90%
   );
   padding: 15px 60px 60px 60px;
-  margin: 15px 70px 70px 70px;
+  margin: 15px 90px 90px 90px;
   width: fit-content;
 }
 .dark-mode {
@@ -19,7 +19,7 @@
   margin: 15px 70px 70px 70px;
 }
 .img {
-  width: 500px;
+  width: 400px;
   max-width: fit-content;
 }
 h4 {
@@ -69,4 +69,20 @@ h1 {
 .info {
   margin: 25px 0px 0px 5px;
   font-size: 16px;
+}
+.firstMin,
+.secondMin,
+.thirdMin,
+.fourthMin,
+.fifthMin {
+  color: rgb(12, 64, 231);
+  font-size: 18px;
+}
+.firstMax,
+.secondMax,
+.thirdMax,
+.fourthMax,
+.fifthMax {
+  color: rgb(223, 102, 102);
+  font-size: 18px;
 }

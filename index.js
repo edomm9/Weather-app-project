@@ -27,10 +27,60 @@ function weatherDisplay(response) {
   console.log(response.data);
   temp = response.data.current;
 }
+function forecastDisplay(response) {
+  console.log(Math.round(response.data.daily[0].temperature.minimum));
+  let day1min = Math.round(response.data.daily[0].temperature.minimum);
+  let day1max = Math.round(response.data.daily[0].temperature.maximum);
+  let day2min = Math.round(response.data.daily[1].temperature.minimum);
+  let day2max = Math.round(response.data.daily[1].temperature.maximum);
+  let day3min = Math.round(response.data.daily[2].temperature.minimum);
+  let day3max = Math.round(response.data.daily[2].temperature.maximum);
+  let day4min = Math.round(response.data.daily[3].temperature.minimum);
+  let day4max = Math.round(response.data.daily[3].temperature.maximum);
+  let day5min = Math.round(response.data.daily[4].temperature.minimum);
+  let day5max = Math.round(response.data.daily[4].temperature.maximum);
+  let display1min = document.querySelector(".firstMin");
+  let display1max = document.querySelector(".firstMax");
+  let display2min = document.querySelector(".secondMin");
+  let display2max = document.querySelector(".secondMax");
+  let display3min = document.querySelector(".thirdMin");
+  let display3max = document.querySelector(".thirdMax");
+  let display4min = document.querySelector(".fourthMin");
+  let display4max = document.querySelector(".fourthMax");
+  let display5min = document.querySelector(".fifthMin");
+  let display5max = document.querySelector(".fifthMax");
+  display1min.textContent = day1min;
+  display1max.textContent = day1max;
+  display2min.textContent = day2min;
+  display2max.textContent = day2max;
+  display3min.textContent = day3min;
+  display3max.textContent = day3max;
+  display4min.textContent = day4min;
+  display4max.textContent = day4max;
+  display5min.textContent = day5min;
+  display5max.textContent = day5max;
+  let icon1 = response.data.daily[0].condition.icon_url;
+  let img1 = document.querySelector(".firsticon");
+  img1.setAttribute("src", icon1);
+  let icon2 = response.data.daily[1].condition.icon_url;
+  let img2 = document.querySelector(".secondicon");
+  img2.setAttribute("src", icon2);
+  let icon3 = response.data.daily[2].condition.icon_url;
+  let img3 = document.querySelector(".thirdicon");
+  img3.setAttribute("src", icon3);
+  let icon4 = response.data.daily[3].condition.icon_url;
+  let img4 = document.querySelector(".fourthicon");
+  img4.setAttribute("src", icon4);
+  let icon5 = response.data.daily[4].condition.icon_url;
+  let img5 = document.querySelector(".fifthicon");
+  img5.setAttribute("src", icon5);
+}
 function searchCity(city) {
   const apiKey = "fa8883a22oc48e9593f685a01bt40076";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(weatherDisplay);
+  axios.get(forecastUrl).then(forecastDisplay);
 }
 
 function handleSubmit(event) {
