@@ -76,8 +76,9 @@ h1 {
 .thirdMin,
 .fourthMin,
 .fifthMin {
-  color: rgb(12, 64, 231);
-  font-size: 18px;
+  color: #97feed;
+  font-size: 20px;
+  font-weight: bold;
 }
 .firstMax,
 .secondMax,
@@ -85,7 +86,8 @@ h1 {
 .fourthMax,
 .fifthMax {
   color: #ff6584;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bold;
 }
 .day1,
 .day2,
