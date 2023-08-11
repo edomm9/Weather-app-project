@@ -16,8 +16,9 @@ function weatherDisplay(response) {
   let h1 = document.querySelector("#city");
   h1.innerHTML = `${city}, ${country}`;
   let sky = response.data.condition.description;
-  let skyCondition = document.querySelector(".sky");
-  skyCondition.innerHTML = sky;
+sky = sky.charAt(0).toUpperCase() + sky.slice(1);
+let skyCondition = document.querySelector(".sky");
+skyCondition.innerHTML = sky;
   let humiditydisplay = document.querySelector(".hum");
   humiditydisplay.innerHTML = humidity;
   let windDisplay = document.querySelector(".wind");
@@ -28,7 +29,6 @@ function weatherDisplay(response) {
   temp = response.data.current;
 }
 function forecastDisplay(response) {
-  console.log(Math.round(response.data.daily[0].temperature.minimum));
   let day1min = Math.round(response.data.daily[0].temperature.minimum);
   let day1max = Math.round(response.data.daily[0].temperature.maximum);
   let day2min = Math.round(response.data.daily[1].temperature.minimum);
@@ -74,6 +74,22 @@ function forecastDisplay(response) {
   let icon5 = response.data.daily[4].condition.icon_url;
   let img5 = document.querySelector(".fifthicon");
   img5.setAttribute("src", icon5);
+  let day1 = document.querySelector(".day1");
+  day1.innerHTML = dayFormat(response.data.daily[0].time);
+  let day2 = document.querySelector(".day2");
+  day2.innerHTML = dayFormat(response.data.daily[1].time);
+  let day3 = document.querySelector(".day3");
+  day3.innerHTML = dayFormat(response.data.daily[2].time);
+  let day4 = document.querySelector(".day4");
+  day4.innerHTML = dayFormat(response.data.daily[3].time);
+  let day5 = document.querySelector(".day5");
+  day5.innerHTML = dayFormat(response.data.daily[4].time);
+}
+function dayFormat(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
 }
 function searchCity(city) {
   const apiKey = "fa8883a22oc48e9593f685a01bt40076";
@@ -112,7 +128,6 @@ let days = [
 ];
 let date = document.querySelector(".time");
 date.innerHTML = `${days[time.getDay()]} ${formattedTime}`;
-
 let celsiusTemperature = null;
 
 function displayF() {
