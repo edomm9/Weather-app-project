@@ -22,6 +22,7 @@
 .img {
   width: 400px;
   max-width: fit-content;
+  object-fit: cover;
 }
 h4 {
   font-weight: lighter;
@@ -30,7 +31,7 @@ h1 {
   margin: 5px 0px 0px 10px;
 }
 .metrics {
-  font-size: 18px;
+  font-size: 20px;
 }
 #form {
   margin: 15px 0px 0px 10px;
@@ -99,4 +100,7 @@ h1 {
 }
 .description {
   font-size: 18px;
+}
+.temp {
+  font-size: 50px;
 }
